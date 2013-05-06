@@ -1,2 +1,6 @@
 build
-
+tools
+waf*
+wscript
+.lock*
+pebble_app.ld
