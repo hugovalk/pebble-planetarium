@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		599D7E151721F7F800B7244F /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 599D7E141721F7F800B7244F /* main.c */; };
-		599D7E171721F7F800B7244F /* planets2.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 599D7E161721F7F800B7244F /* planets2.1 */; };
+		599D7E1E1721F89D00B7244F /* planets.c in Sources */ = {isa = PBXBuildFile; fileRef = 599D7E1D1721F89D00B7244F /* planets.c */; };
+		599D7E201721F8BB00B7244F /* libpebble.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 599D7E1F1721F8BB00B7244F /* libpebble.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,7 +18,6 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				599D7E171721F7F800B7244F /* planets2.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -26,8 +25,8 @@
 
 /* Begin PBXFileReference section */
 		599D7E111721F7F800B7244F /* planets2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = planets2; sourceTree = BUILT_PRODUCTS_DIR; };
-		599D7E141721F7F800B7244F /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		599D7E161721F7F800B7244F /* planets2.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = planets2.1; sourceTree = "<group>"; };
+		599D7E1D1721F89D00B7244F /* planets.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = planets.c; path = src/planets.c; sourceTree = SOURCE_ROOT; };
+		599D7E1F1721F8BB00B7244F /* libpebble.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpebble.a; path = ../lib/libpebble.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				599D7E201721F8BB00B7244F /* libpebble.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +44,7 @@
 		599D7E081721F7F800B7244F = {
 			isa = PBXGroup;
 			children = (
+				599D7E1F1721F8BB00B7244F /* libpebble.a */,
 				599D7E131721F7F800B7244F /* planets2 */,
 				599D7E121721F7F800B7244F /* Products */,
 			);
@@ -60,8 +61,7 @@
 		599D7E131721F7F800B7244F /* planets2 */ = {
 			isa = PBXGroup;
 			children = (
-				599D7E141721F7F800B7244F /* main.c */,
-				599D7E161721F7F800B7244F /* planets2.1 */,
+				599D7E1D1721F89D00B7244F /* planets.c */,
 			);
 			path = planets2;
 			sourceTree = "<group>";
@@ -117,7 +117,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				599D7E151721F7F800B7244F /* main.c in Sources */,
+				599D7E1E1721F89D00B7244F /* planets.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,14 +184,28 @@
 		599D7E1B1721F7F800B7244F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/include\"";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 			};
 			name = Debug;
 		};
 		599D7E1C1721F7F800B7244F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/include\"";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 			};
 			name = Release;
 		};
